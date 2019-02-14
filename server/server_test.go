@@ -11,7 +11,7 @@ func TestDoSomeThing(t *testing.T) {
 	srv := &Server{}
 	srv.db = &mockDb.MockDb{}
 
-	srv.db.On("DoSomeThing").Return(true)
+	srv.db.On("Insert", "some data").Return(true)
 
 	srv.DoSomeThing()
 
